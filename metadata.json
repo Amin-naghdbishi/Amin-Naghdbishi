@@ -1,6 +1,0 @@
-{
-  "name": "ASCII Art Personal Blog & Gallery",
-  "description": "A minimalist, ASCII art and text-driven personal blog and art gallery featuring articles, ASCII works, paintings, and photography.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
