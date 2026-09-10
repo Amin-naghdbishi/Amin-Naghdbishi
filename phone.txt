@@ -1,4 +1,4 @@
-target: computer
+target: phone
 mode: ansi
 size: 11px
 lineHeight: 1
