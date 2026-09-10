@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>معماری کد، توابع و بلاک‌های برنامه‌نویسی مدرن</title>
+  <meta name="english-title" content="CODE ARCHITECTURE & MODERN FUNCTIONS">
+  <meta name="date" content="2026/08/15">
+  <meta name="excerpt" content="بررسی نمایش کدهای برنامه‌نویسی با Syntax Highlighting، بلاک‌های خام متن (Writing Box) و ساختار ماژولار.">
+  <meta name="tags" content="برنامه‌نویسی, کد, توسعه وب, پایتون">
+  <meta name="read-time" content="۴ دقیقه">
+</head>
+<body>
+  <section class="article-body font-vazir">
+    <h2>کدنویسی تمیز و نمایش قطعات کد (CLEAN CODE & SNIPPETS)</h2>
+    
+    <p>
+      برای برنامه‌نویسان و پژوهشگران حوزه هوش مصنوعی و نرم‌افزار، امکان درج کد با ساختار منظم، رنگ‌آمیزی صحیح گرامری (Syntax Highlighting) و دکمه‌های کپی سریع اهمیت بنیادین دارد.
+    </p>
+
+    <pre><code class="language-python"># fibonacci_generator.py
+def fibonacci_stream(limit: int):
+    """
+    تولیدکننده دنباله فیبوناچی با پیچیدگی زمانی O(N)
+    """
+    a, b = 0, 1
+    for _ in range(limit):
+        yield a
+        a, b = b, a + b
+
+if __name__ == "__main__":
+    result = list(fibonacci_stream(10))
+    print(f"Fibonacci sequence: {result}")</code></pre>
+
+    <h3>قطعه کد تایپ‌اسکریپت و ری‌اکت هوک (REACT HOOK & CLIPBOARD)</h3>
+    <p>
+      نمونه‌ای از یک هوک مدرن در سمت فرانت‌اند برای مدیریت کپی در حافظه موقت سیستم:
+    </p>
+
+    <pre><code class="language-typescript">import { useState, useCallback } from 'react';
+
+export function useClipboard(timeout = 2000) {
+  const [hasCopied, setHasCopied] = useState(false);
+
+  const copy = useCallback(async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setHasCopied(true);
+      setTimeout(() => setHasCopied(false), timeout);
+    } catch (err) {
+      console.error('Clipboard copy failed:', err);
+    }
+  }, [timeout]);
+
+  return { hasCopied, copy };
+}</code></pre>
+
+    <h3>جعبه نگارش خام (RAW WRITING BOX)</h3>
+    <p>
+      نمایش متون خام، یادداشت‌ها یا سورس مقالات بدون تفسیر با جعبه اختصاصی:
+    </p>
+
+    <div class="writing" data-title="RAW ARTICLE TEMPLATE SOURCE" data-caption="نمونه‌ی بلاک Writing Box با حفظ تمام کاراکترها و فرمت دست‌نخورده">
+# این یک متن خام است
+* هیچ کدی رندر نمی‌شود
+* فرمول $$E = mc^2$$ به صورت متن خالص باقی می‌ماند
+* [لینک‌ها](https://example.com) کلیک‌پذیر نیستند و به صورت سورس دیده می‌شوند
+* مناسب برای ارائه‌ی کدهای منبع، پیکربندی‌ها و یادداشت‌های خام
+    </div>
+  </section>
+</body>
+</html>
